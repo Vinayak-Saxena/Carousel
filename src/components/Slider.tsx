@@ -23,7 +23,7 @@ const Slider = ({ activeImage, onChange }: SliderProps) => {
       <div className={`w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500 md:rounded-2xl p-6 md:p-0`}>
         {images.map((elem, index) => (
           <div key={index} className={`${index === activeImage ? "block w-full h-[80vh] object-cover transition-all duration-500 ease-in-out" : "hidden"}`}>
-            <Image src={elem.src} alt="" width={400} height={400} className="w-full h-full object-cover md:rounded-tl-3xl md:rounded-bl-3xl" />
+            <Image src={elem.src} alt="" width={400} height={400} className="w-full h-full object-cover md:rounded-tl-3xl md:rounded-bl-3xl" loading="lazy"/>
           </div>
         ))}
       </div>
