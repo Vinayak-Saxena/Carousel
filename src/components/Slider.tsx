@@ -2,7 +2,12 @@ import Image from "next/image";
 import { images } from "@/utils/constants";
 import Description from "./Description";
 
-const Slider = ({ activeImage, onChange }) => {
+interface SliderProps {
+  activeImage: number;
+  onChange: (newActiveImage: number) => void;
+}
+
+const Slider = ({ activeImage, onChange }: SliderProps) => {
   const GoFront = () => {
     const newActiveImage = activeImage === images.length - 1 ? 0 : activeImage + 1;
     onChange(newActiveImage);
@@ -12,7 +17,6 @@ const Slider = ({ activeImage, onChange }) => {
     const newActiveImage = activeImage === 0 ? images.length - 1 : activeImage - 1;
     onChange(newActiveImage);
   };
-
 
   return (
     <main className="grid place-items-center md:grid-cols-2 grid-cols-1 w-full mx-auto max-w-6xl shadow-2xl rounded-2xl">
