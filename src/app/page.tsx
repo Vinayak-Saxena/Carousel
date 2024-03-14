@@ -7,7 +7,7 @@ export default function Home() {
   const [activeImage, setActiveImage] = useState(0);
   const currentImage = images[activeImage];
 
-  const handleSliderChange = (newActiveImage) => {
+  const handleSliderChange = (newActiveImage: number) => {
     setActiveImage(newActiveImage);
   };
 
